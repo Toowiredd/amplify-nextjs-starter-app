@@ -1,30 +1,63 @@
 :root {
+  /* Define color variables */
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: #CBBEFF;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-color: rgba(0, 0, 0, 1);
+  --background-start-color: #CBBEFF;
+  --background-end-color: #FFFFFF;
 
-  --callout-rgb: 238, 240, 241;
-  --callout-border-rgb: 172, 175, 176;
-  --card-rgb: #6649AE;
-  --card-border-rgb: 131, 134, 135;
+  --callout-color: rgba(238, 240, 241, 1);
+  --callout-border-color: rgba(172, 175, 176, 1);
+  --card-color: #6649AE;
+  --card-border-color: rgba(131, 134, 135, 1);
+
+  /* Dark mode variables */
+  --dark-foreground-color: rgba(255, 255, 255, 1);
+  --dark-background-start-color: #000000;
+  --dark-background-end-color: #000000;
+
+  --dark-callout-color: rgba(20, 20, 20, 1);
+  --dark-callout-border-color: rgba(108, 108, 108, 1);
+  --dark-card-color: rgba(100, 100, 100, 1);
+  --dark-card-border-color: rgba(200, 200, 200, 1);
 }
 
+/* Light mode styles */
+body {
+  color: var(--foreground-color);
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      var(--background-end-color)
+    )
+    var(--background-start-color);
+}
+
+/* Dark mode styles */
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-color: var(--dark-foreground-color);
+    --background-start-color: var(--dark-background-start-color);
+    --background-end-color: var(--dark-background-end-color);
 
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
+    --callout-color: var(--dark-callout-color);
+    --callout-border-color: var(--dark-callout-border-color);
+    --card-color: var(--dark-card-color);
+    --card-border-color: var(--dark-card-border-color);
+  }
+
+  body {
+    color: var(--foreground-color);
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        var(--background-end-color)
+      )
+      var(--background-start-color);
   }
 }
 
@@ -41,13 +74,47 @@ body {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+  font-variant-east-asian: full-width;
+  hyphens: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: clamp(2rem, 2.5vw, 3rem);
+}
+
+h2 {
+  font-size: clamp(1.8rem, 2.2vw, 2.4rem);
+}
+
+h3 {
+  font-size: clamp(1.6rem, 2vw, 2rem);
+}
+
+h4 {
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+}
+
+h5 {
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+}
+
+h6 {
+  font-size: clamp(1rem, 2vw, 1.4rem);
 }
 
 a {
