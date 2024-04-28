@@ -19,6 +19,8 @@ export default function Home() {
           width={180}
           height={37}
           priority
+          loading="eager"
+          aria-label="Next.js Logo"
         />
         <span>+</span>
         <Image
@@ -27,6 +29,8 @@ export default function Home() {
           width={45}
           height={37}
           priority
+          loading="eager"
+          aria-label="Amplify Logo"
         />
       </div>
 
@@ -34,6 +38,7 @@ export default function Home() {
         <a
           href="https://docs.amplify.aws/gen2/"
           className={styles.card}
+          title="Amplify Documentation"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -46,6 +51,7 @@ export default function Home() {
         <a
           href="https://docs.amplify.aws/gen2/start/quickstart/"
           className={styles.card}
+          title="Amplify Quickstart"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -58,29 +64,10 @@ export default function Home() {
         <a
           href="https://docs.amplify.aws/gen2/build-a-backend/auth/set-up-auth/"
           className={styles.card}
+          title="Amplify Auth"
           target="_blank"
           rel="noopener noreferrer"
         >
           <h2>
             Auth <span>-&gt;</span>
-          </h2>
-          <p>Zero-config Auth UI components with social sign-in and MFA.</p>
-        </a>
-
-        <a
-          href="https://docs.amplify.aws/gen2/build-a-backend/data/set-up-data/"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Data <span>-&gt;</span>
-          </h2>
-          <p>
-            Fully-typed real-time API with NoSQL database.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
-}
+         
