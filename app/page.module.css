@@ -1,3 +1,19 @@
+/* Base styles */
+body {
+  background-color: var(--background-start-rgb);
+  transition: background-color 0.5s ease-in-out;
+}
+
+:root {
+  --max-width: 1200px;
+  --border-radius: 4px;
+  --card-rgb: 245, 245, 245;
+  --card-border-rgb: 220, 220, 220;
+  --callout-rgb: 255, 235, 59;
+  --callout-border-rgb: 255, 204, 59;
+}
+
+/* General layout */
 .main {
   display: flex;
   flex-direction: column;
@@ -46,6 +62,7 @@
   width: var(--max-width);
 }
 
+/* Card styles */
 .card {
   padding: 1rem 1.2rem;
   border-radius: var(--border-radius);
@@ -72,6 +89,7 @@
   max-width: 30ch;
 }
 
+/* Center alignment */
 .center {
   display: flex;
   justify-content: center;
@@ -81,18 +99,19 @@
   gap: 4rem;
 }
 
-/* Enable hover only on non-touch devices */
+/* Hover styles for non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
     background: rgba(var(--card-rgb), 0.1);
     border: 1px solid rgba(var(--card-border-rgb), 0.15);
-    box-shadow: 0px 4px 12px 0px #CBBEFF;
+    box-shadow: 0px 4px 12px 0px #cbbeff;
   }
 
   .card:hover span {
     transform: translateX(4px);
   }
 
+  /* Dark mode adjustments for hover styles */
   @media (prefers-color-scheme: dark) {
     .card:hover {
       box-shadow: none;
@@ -100,14 +119,17 @@
   }
 }
 
+/* Reduced motion adjustments */
 @media (prefers-reduced-motion) {
   .card:hover span {
     transform: none;
   }
 }
 
+/* Media queries for responsiveness */
 /* Mobile */
 @media (max-width: 700px) {
+  /* General layout adjustments */
   .content {
     padding: 4rem;
   }
@@ -190,13 +212,14 @@
   }
 }
 
+/* Dark mode styles */
 @media (prefers-color-scheme: dark) {
   .logo {
     filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
   }
 }
 
-
+/* Animation for rotating elements */
 @keyframes rotate {
   from {
     transform: rotate(360deg);
